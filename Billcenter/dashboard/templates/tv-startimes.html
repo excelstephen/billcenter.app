@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="content-wrapper">
+            
+  <div class="div col-md-12">
+      <h2><span><img src="{% static "dashboard/assets/images/billers/startimes.png" %}" alt="mtn" class="" width="60px" height="60px"></span>     TV Subscription 
+          <span style="text-align: left; float: right; font-size: 14px"><a href="{% url "dashboard:tv" %}">Go back</a></span></h2>
+      
+      <div class="dropdown-divider"></div>
+      <br>
+    </div>
+
+  <div class="row ">
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"> Subscribe for package</h4>
+              <form class="forms-sample">
+                <div class="form-group">
+                  <label for="exampleInputUsername1">Phone Number</label>
+                  <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter your phone number" style="color: white;">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputConfirmPassword1">Smartcard Number</label>
+                  <input type="number" class="form-control" id="exampleInputConfirmPassword1" placeholder="Enter Smartcard Number" style="color: white;">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputConfirmPassword1">TV Package</label>
+                  <select name="" id="" class="form-control" id="exampleInputConfirmPassword1" style="color: white;" >
+                      <option value="">Classic</option>
+                      <option value="">Basic</option>
+                      <option value="">Nova</option>
+                      <option value="">Chinese</option>
+                      <option value="">Super</option>
+                      <option value="">Smart</option>
+                  </select>
+                  <!-- <input type="number" class="form-control" id="exampleInputConfirmPassword1" placeholder="Enter Amount from 5-50000"> -->
+                </div>
+
+                <div class="form-check form-check-flat form-check-primary">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> Save Smartcard Number</label>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Buy</button>
+                <a href="{% url "dashboard:tv" %}" class="btn btn-dark">Cancel</a>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 grid-margin stretch-card">
+              <img src="{% static "dashboard/assets/images/startimes.jpeg" %}" alt="" style="position: relative; width: 300px">
+        </div>
+
+  </div>
+  
+  
+  
+</div>
+<!-- content-wrapper ends -->
+{% endblock content  %}
+          

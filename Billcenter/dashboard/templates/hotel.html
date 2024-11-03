@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+            
+  <div class="row">
+      <div class="div col-md-12">
+          <h2>Hotel Bill Payment</h2>
+          
+          <div class="dropdown-divider"></div>
+          <br>
+        </div>
+
+      <div class="col-md-12">
+          <p>Select Hotels from below</p>
+      </div>
+
+    
+    <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:hotel_sheraton" %}">
+           <div class="card">
+              <div class="card-body" style="background-color: white;">
+              <!-- <h5>Pay electricity bills</h5> -->
+              <center>
+                  <img src="{% static "assets/images/billers/sheraton.png" %}" alt="sheraton" class="" width="100px" height="100px">
+              </center>
+              </div>  
+          </div> 
+          </a>
+      </div>
+
+      
+    
+
+
+  </div>
+  
+  
+  
+</div>
+{% endblock content %}
+
+          

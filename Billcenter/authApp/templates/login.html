@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bill Center | Login </title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static "assets/images/logo/logo6.png" %}" type="image/png">
+
+    <link rel="stylesheet" href="{% static "assets/css/login-style.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body class="body-background">
+  <div class="form-container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="{% static "assets/images/login-images/frontImg.jpg" %}" alt="">
+        <div class="text">
+          <img src="{% static "assets/images/logo/logo1.png" %}" alt="" style="width: 50%; height: 40%; margin: auto;">
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="{% static "assets/images/login-images/backImg.jpg" %}" alt="">
+        <div class="text">
+          <img src="{% static "assets/images/logo/logo1.png" %}" alt="" style="width: 50%; height: 40%; margin: auto;">
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <center>
+              <a href="{% url "landingPage:index" %}">
+                <img src="{% static "assets/images/logo/logo6.png" %}" alt="" style="width: 60px; height: 60px;">
+              </a>
+            </center>
+            <div class="title">Login</div>
+            <br>
+                    {% if messages %}
+                    <div class="alert alert-danger">
+                        {% for message in messages %}
+                        <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+          <form action="#" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                {{ loginform.email }}
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                 {{ loginform.password }}
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <center>
+            <a href="{% url "landingPage:index" %}">
+              <img src="{% static "assets/images/logo/logo6.png" %}" alt="" style="width: 60px; height: 60px;">
+            </a>
+          </center>
+          <div class="title">Signup</div>
+
+        <form action="{% url "auth:signup" %}" method="POST">
+            {% csrf_token %}
+            <div class="input-boxes">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    {{ form.first_name }}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    {{ form.last_name }}
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                {{ form.email }}
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    {{ form.password1 }}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    {{ form.password2 }}
+                  </div>
+                </div>
+              </div>
+              
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

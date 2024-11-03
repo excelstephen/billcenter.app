@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bill Center | Email Verification </title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static "assets/images/logo/logo6.png" %}" type="image/png">
+
+    <link rel="stylesheet" href="{% static "assets/css/signup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body class="body-background">
+  <div class="form-container">
+
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="{% static "assets/images/login-images/frontImg.jpg" %}" alt="">
+        <div class="text">
+          <img src="{% static "assets/images/logo/logo1.png" %}" alt="" style="width: 40%; height: 40%; margin: auto;">
+        </div>
+      </div>
+      
+    </div>
+        <div class="forms">
+            <div class="form-content">
+            
+                <div class="signup-form">
+                    <center>
+                      <br>
+                        <a href="{% url "auth:signup" %}">
+                        <img src="{% static "assets/images/logo/logo6.png" %}" alt="" style="width: 60px; height: 60px;">
+                        </a>
+                    </center>
+                    <br>
+                    <center>
+                        <h3>Email verification</h3>
+                    </center>
+                    
+                    <form action="{% url 'auth:verify_otp' %}" method="POST">
+                      {% csrf_token %}
+                      <div class="input-boxes">
+                          <center>
+                              <p>An OTP code has been sent to {{ email }}. <br></p>
+                          </center>
+                          <div class="otpcode-field">
+                              <input type="number" class="form-control" name="otpcode" placeholder="Enter the OTP code">
+                              <input type="text" class="form-control" name="email" value="{{ email }}" hidden>
+                          </div>
+                          <div class="button input-box">
+                              <input type="submit" value="Submit">
+                          </div>
+                      </form>
+                      <center>
+                          <a href="{% url 'auth:resend_otp' %}?email={{ email }}">Resend OTP</a>  <!-- Updated resend link -->
+                      </center>
+                  
+
+            </div>
+
+        </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+

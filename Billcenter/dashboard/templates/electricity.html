@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+            
+  <div class="row">
+      <div class="div col-md-12">
+          <h2>Pay Electricity Bill</h2>
+          
+          <div class="dropdown-divider"></div>
+          <br>
+        </div>
+
+      <div class="col-md-12">
+          <p>Select your electricity provider</p>
+      </div>
+
+    
+      <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:electricity_aedc" %}">
+           <div class="card">
+        <div class="card-body" style="background-color: white;">
+          <!-- <h5>Pay electricity bills</h5> -->
+          <center>
+              <img src="{% static "dashboard/assets/images/billers/aedc.png" %}" alt="mtn" class="" width="100px" height="100px">
+          </center>
+        </div>
+        </a>
+      </div> 
+        
+    
+    </div>
+    
+    
+
+
+  </div>
+  
+  
+  
+</div>
+{% endblock content %}
+
+
+
+
+          

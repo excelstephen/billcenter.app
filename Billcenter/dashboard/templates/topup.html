@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="content-wrapper">
+            
+  <div class="row">
+      <div class="div col-md-12">
+          <h2>Airtime and Data Top-up</h2>
+          
+          <div class="dropdown-divider"></div>
+          <br>
+        </div>
+
+      <div class="col-md-12">
+          <p>Select your network</p>
+      </div>
+
+    
+    <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:topup_mtn" %}">
+           <div class="card">
+        <div class="card-body ">
+          <!-- <h5>Pay electricity bills</h5> -->
+          <center>
+              <img src="{% static "dashboard/assets/images/billers/mtn.png" %}" alt="mtn" class="" width="100px" height="100px">
+          </center>
+        </div>
+      </div> 
+        </a>
+      
+    </div>
+    <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:topup_airtel" %}">
+            <div class="card">
+        <div class="card-body ">
+          <!-- <h5>Pay electricity bills</h5> -->
+          <center>
+              <img src="{% static "dashboard/assets/images/billers/airtel.jpeg" %}" alt="mtn" class="" width="100px" height="100px">
+          </center>
+        </div>
+      </div>
+        </a>
+      
+    </div>
+    <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:topup_glo" %}">
+            <div class="card">
+              <div class="card-body ">
+                  <!-- <h5>Pay electricity bills</h5> -->
+                  <center>
+                      <img src="{% static "dashboard/assets/images/billers/glo.png" %}" alt="mtn" class="" width="100px" height="100px">
+                  </center>
+              </div>
+              </div>
+          </div>
+        </a>
+      
+    <div class="col-sm-3 grid-margin text-center">
+        <a href="{% url "dashboard:topup_9mobile" %}">
+          <div class="card">
+              <div class="card-body ">
+              <!-- <h5>Pay electricity bills</h5> -->
+              <center>
+                  <img src="{% static "dashboard/assets/images/billers/9mobile.jpg" %}" alt="mtn" class="" width="100px" height="100px">
+              </center>
+              </div>
+          </div>
+        </a>
+      
+    </div>
+    
+    
+
+
+  </div>
+  
+  
+</div>
+{% endblock content %}
