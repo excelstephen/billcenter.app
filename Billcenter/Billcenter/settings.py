@@ -148,8 +148,8 @@ EMAIL_HOST = 'mail.billcenter.app'  # Use your SMTP server
 EMAIL_PORT = 465  # Use port 465 for SSL or 587 for TLS
 EMAIL_USE_TLS = False  # Use False for SSL
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'info@billcenter.app'  # Your email address
-EMAIL_HOST_PASSWORD = 'Segun-123'  # App-specific password for Gmail
+EMAIL_HOST_USER = ''  # Your email address
+EMAIL_HOST_PASSWORD = ''  # App-specific password for Gmail
 
 # Optional settings
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
